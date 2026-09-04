@@ -1,45 +1,116 @@
-STEP 11 — ADD ACTUAL DEPLOYMENT URLS TO README
+# 1Fi — Product & EMI Plans
 
-Update ONLY README.md.
+A full-stack product browsing application built as part of the **1Fi SDE1 Full Stack Developer Internship Assignment**.
 
-Do not modify any application source code, database files, seed data, configuration, or UI.
+The application allows users to browse products, select storage and color variants, view pricing and EMI plans, select an EMI plan, and proceed with the selected plan.
 
-Replace ONLY the deployment placeholders with the actual deployed URLs:
+All product, variant, pricing, image, and EMI information is served dynamically from **MongoDB through a Node.js/Express backend API**.
 
-Frontend:
-https://onefi-frontend-pink.vercel.app
+---
 
-Backend:
-https://onefi-backend-8enu.onrender.com
+## Features
 
-Keep the existing README structure and wording intact.
+- Product listing page
+- Dynamic product detail pages
+- Unique product URLs using product slugs
+- Product name and description
+- Storage selection
+- Color selection
+- Variant availability handling
+- Dynamic product images
+- MRP and selling price
+- Savings amount
+- Multiple EMI plans
+- Monthly EMI amount
+- EMI tenure
+- Interest rate
+- Cashback information
+- EMI plan selection
+- Proceed with selected EMI plan
+- Confirmation modal after proceeding
+- EMI selection resets when the product variant changes
+- Responsive user interface
+- MongoDB-backed product data
+- REST API-driven frontend
+- No hardcoded product or EMI data in the React source
 
-In the Deployment section:
+---
 
-Frontend:
-https://onefi-frontend-pink.vercel.app
+## Tech Stack
 
-Backend:
-https://onefi-backend-8enu.onrender.com
+### Frontend
 
-Also ensure the README clearly states that the frontend uses VITE_API_URL pointing to the deployed backend.
+- React 19
+- React Router v7
+- Tailwind CSS v4
+- Vite 8
 
-Do NOT add fake URLs.
+### Backend
 
-Do NOT add the demo video URL yet. Keep the existing video placeholder because the video has not been recorded.
+- Node.js
+- Express 5
+- Mongoose 9
 
-After updating:
+### Database
 
-1. Verify both URLs are written correctly.
-2. Verify no credentials or secrets were added.
-3. Confirm ONLY README.md was modified.
-4. Run:
-   git diff -- README.md
+- MongoDB Atlas
 
-5. Do NOT commit or push yet.
+### Deployment
 
-Return:
-- exact deployment URLs added
-- confirmation that video placeholder remains
-- confirmation that only README.md changed
-- git diff summary
+- Frontend: Vercel
+- Backend: Render
+- Database: MongoDB Atlas
+
+---
+
+## Project Structure
+
+```text
+1Fi Task/
+├── backend/
+│   ├── package.json
+│   ├── package-lock.json
+│   └── src/
+│       ├── app.js
+│       ├── server.js
+│       ├── config/
+│       │   └── db.js
+│       ├── controllers/
+│       │   └── productController.js
+│       ├── models/
+│       │   └── Product.js
+│       ├── routes/
+│       │   └── productRoutes.js
+│       ├── scripts/
+│       │   └── seed.js
+│       └── services/
+│           └── productService.js
+│
+├── frontend/
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── index.html
+│   ├── vite.config.js
+│   ├── public/
+│   │   └── images/
+│   │       ├── iphone-17-pro-orange.jpg
+│   │       ├── iphone-17-pro-silver.jpg
+│   │       ├── pixel-10-pro-hazel.jpg
+│   │       ├── pixel-10-pro-obsidian.jpg
+│   │       ├── samsung-s25-ultra-black.jpg
+│   │       └── samsung-s25-ultra-gray.jpg
+│   └── src/
+│       ├── App.jsx
+│       ├── index.css
+│       ├── main.jsx
+│       ├── components/
+│       │   └── ProductCard.jsx
+│       ├── pages/
+│       │   ├── Home.jsx
+│       │   └── ProductPage.jsx
+│       └── services/
+│           └── productService.js
+│
+├── .env.example
+├── .gitignore
+└── README.md
