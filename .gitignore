@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Environment files — never commit real credentials
+.env
+.env.*
+# Allow example files
+!.env.example
+!**/.env.example
+
+# Per-location overrides already covered by .env.* above, listed explicitly for clarity
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+backend/.env
+
+# Build outputs
+dist/
+build/
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS / editor generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Vite cache
+.vite/
